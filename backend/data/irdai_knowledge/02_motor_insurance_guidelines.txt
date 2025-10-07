@@ -1,0 +1,319 @@
+IRDAI Motor Insurance Guidelines
+Insurance Regulatory and Development Authority of India
+
+===================================================================
+SECTION 1: MOTOR INSURANCE BASICS
+===================================================================
+
+1.1 Definition and Purpose
+Motor insurance provides financial protection against physical damage and/or bodily injury resulting from traffic collisions and against liability that could arise from incidents in a vehicle.
+
+1.2 Legal Requirement
+As per Motor Vehicles Act, 1988:
+- Third-party motor insurance is MANDATORY for all vehicles in India
+- Driving without valid insurance is a criminal offense
+- Penalty: Up to Rs. 2,000 fine and/or 3 months imprisonment (for first offense)
+
+1.3 Types of Motor Insurance
+A) Third-Party Liability Insurance (Mandatory)
+- Covers injury/death to third party
+- Covers property damage to third party
+- Does NOT cover own vehicle damage
+
+B) Comprehensive Insurance (Optional but Recommended)
+- Covers own damage (accident, fire, theft, natural disasters)
+- Includes third-party liability coverage
+- Additional covers available (zero depreciation, engine protection, etc.)
+
+===================================================================
+SECTION 2: THIRD-PARTY LIABILITY COVERAGE
+===================================================================
+
+2.1 Mandatory Coverage
+Third-party policy must cover:
+- Bodily injury/death to third party: UNLIMITED
+- Property damage to third party: Up to Rs. 7.5 lakhs
+- Legal liability arising from accidents
+
+2.2 Premium Structure (Regulated by IRDAI)
+Third-party premiums are fixed by IRDAI based on:
+- Vehicle type (two-wheeler, car, commercial)
+- Engine capacity (for cars: <1000cc, 1000-1500cc, >1500cc)
+- Carrying capacity (for commercial vehicles)
+
+2.3 Premium Rates (Indicative - 2024)
+Two-wheelers:
+- Up to 75cc: Rs. 482 per year
+- 75cc - 150cc: Rs. 714 per year
+- 150cc - 350cc: Rs. 1,366 per year
+- Above 350cc: Rs. 2,804 per year
+
+Private Cars:
+- Up to 1000cc: Rs. 2,072 per year
+- 1000cc - 1500cc: Rs. 3,221 per year
+- Above 1500cc: Rs. 7,890 per year
+
+===================================================================
+SECTION 3: COMPREHENSIVE (OWN DAMAGE) COVERAGE
+===================================================================
+
+3.1 Own Damage Coverage
+Covers damage to insured vehicle due to:
+- Accidents and collisions
+- Fire and explosion
+- Lightning and earthquakes
+- Floods, cyclones, typhoons
+- Landslides and rockslides
+- Theft and burglary
+- Riots, strikes, malicious acts
+- Terrorism-related damage
+- Transit by road, rail, inland waterway
+
+3.2 Own Damage Premium Calculation
+Factors affecting OD premium:
+- Insured Declared Value (IDV) of vehicle
+- Vehicle make, model, variant
+- Vehicle age
+- City of registration (zone)
+- No Claim Bonus (NCB) eligibility
+- Add-on covers opted
+- Voluntary deductible chosen
+
+3.3 Insured Declared Value (IDV)
+- IDV = Current market value of vehicle
+- Calculated as: Manufacturer's listed price - depreciation
+- IDV decreases each year as vehicle ages
+- Minimum IDV: 95% of manufacturer's listed price (for new vehicle)
+- Maximum IDV: 105% of manufacturer's listed price (for new vehicle)
+
+3.4 Depreciation Rates (IRDAI Mandated)
+Age of Vehicle | Depreciation Rate
+0-6 months     | 5%
+6-12 months    | 15%
+1-2 years      | 20%
+2-3 years      | 30%
+3-4 years      | 40%
+4-5 years      | 50%
+Above 5 years  | Mutually agreed between insurer and insured
+
+For fiber glass, plastic parts: Additional 50% depreciation
+For rubber, nylon parts: Additional 50% depreciation
+
+===================================================================
+SECTION 4: NO CLAIM BONUS (NCB)
+===================================================================
+
+4.1 NCB Structure
+No claim during year → Discount on OD premium (not on TP premium)
+
+NCB Slab Structure:
+- After 1st claim-free year: 20% discount
+- After 2nd claim-free year: 25% discount
+- After 3rd claim-free year: 35% discount
+- After 4th claim-free year: 45% discount
+- After 5th claim-free year: 50% discount (maximum)
+
+4.2 NCB Transfer Rules
+- NCB belongs to policyholder, not vehicle
+- Can transfer NCB when buying new vehicle
+- Can transfer NCB when changing insurer
+- NCB lost if claim made (resets to 0%)
+- Standalone third-party claims don't affect NCB
+
+===================================================================
+SECTION 5: ADD-ON COVERS (OPTIONAL)
+===================================================================
+
+5.1 Zero Depreciation Cover
+- No depreciation deducted during claim settlement
+- Covers full cost of parts replaced
+- Premium increases by 15-20%
+- Highly recommended for new vehicles (up to 5 years old)
+
+5.2 Engine Protection Cover
+- Covers engine damage due to water ingression
+- Covers consequential damage due to lubricant leakage
+- Essential for cities with waterlogging issues
+
+5.3 Return to Invoice (RTI)
+- If vehicle is stolen or total loss, receive invoice value
+- Difference between IDV and invoice value paid
+- Applicable only for vehicles less than 3 years old
+
+5.4 Road Side Assistance (RSA)
+- On-spot repairs for minor breakdowns
+- Towing facility to nearest garage
+- Fuel delivery, key replacement services
+
+5.5 Consumables Cover
+- Covers cost of consumables (engine oil, coolant, nuts, bolts, etc.)
+- Normally excluded in standard policy
+
+5.6 NCB Protection
+- Protects your NCB even after making a claim
+- Limited to 1-2 claims per year
+- Useful for maintaining high NCB benefits
+
+5.7 Daily Allowance
+- Compensation for each day vehicle is in garage
+- Usually Rs. 200-500 per day, maximum 30 days
+
+===================================================================
+SECTION 6: CLAIM SETTLEMENT PROCESS
+===================================================================
+
+6.1 Steps for Claim Filing
+1. Immediate Actions:
+   - For accidents: Inform police (mandatory for third-party claims)
+   - For theft: Lodge FIR immediately
+   - Inform insurer within 24 hours (cashless) or 7 days (reimbursement)
+
+2. Documentation:
+   - Claim form (duly filled)
+   - Copy of policy
+   - RC (Registration Certificate) copy
+   - Driving license copy
+   - FIR copy (for theft/major accident)
+   - Repair bills and invoices
+   - Survey report
+
+3. Survey and Assessment:
+   - Insurer appoints surveyor
+   - Surveyor inspects damage
+   - Estimates repair cost
+   - Submits report within 48 hours
+
+4. Claim Approval and Payment:
+   - Cashless: Insurer settles directly with garage
+   - Reimbursement: Amount transferred to policyholder's account
+   - Settlement within 30 days of receiving complete documents
+
+6.2 Claim Rejection Reasons
+Valid reasons for claim rejection:
+- Driving without valid license
+- Driving under influence of alcohol/drugs
+- Using vehicle for commercial purposes (on private car policy)
+- Consequential damage (not covered without add-on)
+- Normal wear and tear
+- Mechanical/electrical breakdown
+- Policy expired at time of incident
+- Non-disclosure or misrepresentation
+
+===================================================================
+SECTION 7: EXCLUSIONS IN MOTOR INSURANCE
+===================================================================
+
+7.1 Standard Exclusions
+Not covered under motor insurance:
+- Wear and tear, depreciation, mechanical breakdown
+- Damage due to war, nuclear risks
+- Contractual liability
+- Consequential loss (without add-on cover)
+- Using vehicle outside geographical area
+- Driving without valid license or by unlicensed person
+- Driving under influence of alcohol/drugs
+- Using vehicle for unauthorized purposes
+
+7.2 Geographical Limits
+- Standard policies: Valid only in India
+- For travel to Nepal, Bhutan, Bangladesh, Pakistan, Maldives, Sri Lanka:
+  Request extension and pay additional premium
+
+===================================================================
+SECTION 8: POLICY RENEWAL AND LAPSE
+===================================================================
+
+8.1 Renewal Guidelines
+- Renew policy before expiry date to avoid break in coverage
+- Grace period: NO grace period for motor insurance
+- Even one day lapse requires fresh inspection
+- NCB protected only if renewed within 90 days
+
+8.2 Lapsed Policy Consequences
+If policy lapses (not renewed on time):
+- No insurance coverage (illegal to drive)
+- Loss of NCB benefits
+- Mandatory vehicle inspection required for renewal
+- May need to buy fresh policy (no continuity benefits)
+
+8.3 Long-term Policies
+IRDAI permits long-term motor insurance:
+- Two-wheelers: Up to 3 years bundled policy
+- Private cars: 3 years bundled OD + TP
+- Advantages: Locked-in price, no renewal hassle
+- TP premium fixed for policy tenure
+
+===================================================================
+SECTION 9: INSURER OBLIGATIONS
+===================================================================
+
+9.1 Claim Settlement Time
+- Cashless approval: Within 2 hours for emergency
+- Survey completion: Within 48 hours
+- Final settlement: Within 30 days of complete documentation
+- Delay penalty: Interest on delayed amount
+
+9.2 Network Garages
+- Insurers must maintain adequate network garages
+- List of network garages to be published and updated regularly
+- Cashless facility at network garages
+
+9.3 Customer Service
+- Toll-free helpline (24x7)
+- Claim assistance and guidance
+- Regular communication on claim status
+- Grievance officer contact prominently displayed
+
+===================================================================
+SECTION 10: RECENT REGULATORY CHANGES (2024)
+===================================================================
+
+10.1 Key Updates
+- Mandatory long-term third-party insurance for new vehicles
+- New cars: 3-year compulsory TP cover
+- New two-wheelers: 5-year compulsory TP cover
+- OD cover can be purchased separately after 1st year
+- Pay-as-you-drive and usage-based insurance permitted
+- Enhanced focus on digital claims and settlements
+
+10.2 Electric Vehicle Guidelines
+- Separate premium structure for electric vehicles
+- Battery coverage mandatory (up to 8 years or 1.6 lakh km)
+- Charging equipment coverage included
+- Lower premiums compared to ICE vehicles
+
+===================================================================
+SECTION 11: GRIEVANCE REDRESSAL
+===================================================================
+
+11.1 Complaint Process
+Step 1: Insurer's Grievance Officer
+- Raise complaint with insurer first
+- Response expected within 15 days
+
+Step 2: Insurance Ombudsman
+- Free of cost
+- Jurisdiction: Up to Rs. 50 lakhs
+- Decision binding on insurer
+
+Step 3: IRDAI IGMS
+- File complaint on IRDAI portal
+- Escalation if not resolved at previous levels
+
+===================================================================
+COMPLIANCE CHECKLIST FOR POLICYHOLDERS
+===================================================================
+
+✓ Ensure valid insurance at all times (legal requirement)
+✓ Read policy document thoroughly before purchase
+✓ Declare correct vehicle details and usage
+✓ Maintain valid driving license
+✓ Renew policy before expiry (no grace period)
+✓ Inform insurer within stipulated time for claims
+✓ Keep all vehicle documents handy
+✓ Verify network garages for cashless claims
+
+For detailed regulations and updates: www.irdai.gov.in
+
+Document Version: 2024.1
+Last Updated: January 2024

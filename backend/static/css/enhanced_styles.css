@@ -1,0 +1,595 @@
+/**
+ * Enhanced Styles for SaralPolicy
+ * Includes: Dark mode, progress indicators, audio controls, better UX
+ */
+
+/* ============================================
+   AUDIO CONTROLS
+   ============================================ */
+
+.audio-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.audio-control-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.audio-control-btn:hover {
+    background: #5640a0;
+    transform: scale(1.05);
+}
+
+.audio-control-btn .material-icons {
+    font-size: 16px;
+}
+
+.tts-loading {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   COPY BUTTON
+   ============================================ */
+
+.copy-btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.copy-btn:hover {
+    background: #4a4560;
+    transform: translateY(-1px);
+}
+
+.copy-btn .material-icons {
+    font-size: 14px;
+}
+
+/* ============================================
+   PROGRESS INDICATOR
+   ============================================ */
+
+.analysis-progress {
+    padding: 30px;
+    text-align: center;
+}
+
+.progress-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    transition: all 0.3s;
+    opacity: 0.5;
+}
+
+.progress-step.active {
+    opacity: 1;
+    background: var(--primary-light);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.progress-step.complete {
+    opacity: 1;
+    background: #d4edda;
+}
+
+.progress-step.complete .step-icon .material-icons {
+    color: var(--success);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.step-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-icon .material-icons {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.step-text {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--text);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--success));
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.progress-percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ============================================
+   ACTION BUTTONS BAR
+   ============================================ */
+
+.action-buttons-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16px;
+    background: var(--surface-variant);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.action-btn .material-icons {
+    font-size: 18px;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .upload-area {
+    background: #333;
+    border-color: #555;
+}
+
+body.dark-mode .result-card {
+    background: #2a2a2a;
+    border-left-color: var(--primary);
+}
+
+body.dark-mode .result-content {
+    color: #e0e0e0;
+}
+
+body.dark-mode .term-item,
+body.dark-mode .feature-item {
+    background: #333;
+}
+
+body.dark-mode .exclusion-item {
+    background: #3a2f0f;
+}
+
+body.dark-mode .coverage-item {
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .progress-step {
+    background: #333;
+}
+
+body.dark-mode .progress-step.active {
+    background: #4a3d7c;
+}
+
+body.dark-mode .progress-step.complete {
+    background: #1d4024;
+}
+
+body.dark-mode .action-buttons-bar {
+    background: #333;
+}
+
+body.dark-mode .action-btn {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode .action-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+#darkModeToggle .material-icons {
+    font-size: 24px;
+}
+
+/* ============================================
+   ERROR CARD
+   ============================================ */
+
+.error-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid var(--error);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: var(--error);
+    margin-bottom: 16px;
+}
+
+.error-icon .material-icons {
+    font-size: 64px;
+}
+
+.error-content h3 {
+    font-size: 1.5rem;
+    color: var(--error);
+    margin-bottom: 12px;
+}
+
+.error-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.error-action-btn {
+    background: var(--error);
+    color: white;
+}
+
+.error-action-btn:hover {
+    background: #a01616;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .no-print,
+    #darkModeToggle,
+    .lang-toggle,
+    .upload-section,
+    .tts-controls,
+    .audio-controls,
+    .action-buttons-bar {
+        display: none !important;
+    }
+    
+    .header {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+    
+    .result-card {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .audio-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .action-buttons-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .progress-steps {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    .progress-step {
+        font-size: 0.9rem;
+    }
+    
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tts-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    #darkModeToggle {
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* ============================================
+   ENHANCED TOOLTIPS
+   ============================================ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* ============================================
+   SUCCESS MESSAGES
+   ============================================ */
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease;
+}
+
+.success-message .material-icons {
+    color: #28a745;
+    font-size: 24px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   LOADING SHIMMER EFFECT
+   ============================================ */
+
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus indicators */
+button:focus,
+input:focus,
+.btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn,
+    .action-btn,
+    .tts-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

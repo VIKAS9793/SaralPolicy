@@ -1,0 +1,337 @@
+IRDAI Life Insurance Guidelines
+Insurance Regulatory and Development Authority of India
+
+===================================================================
+SECTION 1: LIFE INSURANCE BASICS
+===================================================================
+
+1.1 Definition and Purpose
+Life insurance is a contract between an insurer and policyholder where the insurer promises to pay a designated beneficiary a sum of money upon the death of the insured person. It can also provide maturity benefits if the insured survives the policy term.
+
+1.2 Types of Life Insurance Policies
+A) Term Insurance
+- Pure risk cover, no maturity benefit
+- Most affordable life insurance
+- Coverage for specified term (10, 20, 30 years or up to certain age)
+- Death benefit paid to nominee
+
+B) Endowment Plans
+- Combines insurance + savings
+- Provides death benefit and maturity benefit
+- Higher premiums than term insurance
+- Returns lower than pure investment products
+
+C) Whole Life Insurance
+- Coverage for entire lifetime (typically up to 100 years)
+- Provides death benefit whenever death occurs
+- Higher premiums than term insurance
+
+D) Unit Linked Insurance Plans (ULIPs)
+- Insurance + investment component
+- Premiums invested in equity/debt funds
+- Returns market-linked
+- Lock-in period: 5 years
+
+E) Money Back Policies
+- Periodic survival benefits during policy term
+- Death benefit in case of death during term
+- Maturity benefit at end of term
+
+===================================================================
+SECTION 2: REGULATORY FRAMEWORK
+===================================================================
+
+2.1 IRDAI Mandate
+All life insurance companies must:
+- Maintain solvency ratio of minimum 1.5 (150%)
+- Invest funds as per IRDAI investment regulations
+- Ensure transparency in policy terms
+- Provide clear benefit illustrations
+- Settle claims within stipulated timelines
+
+2.2 Free Look Period
+- 15 days for policies purchased directly
+- 30 days for policies purchased through distance marketing
+- Policyholder can return policy within free look period
+- Premium refunded minus medical expenses and stamp duty
+
+2.3 Nomination and Assignment
+Nomination:
+- Policyholder can nominate beneficiary(ies) to receive death benefit
+- Nomination can be changed during policy term
+- Nominee has no absolute right (can be changed by policyholder)
+
+Assignment:
+- Transfer of policy rights to another person/entity
+- Common for loan purposes (assigned to bank as security)
+- Assignment can be conditional or absolute
+
+===================================================================
+SECTION 3: PREMIUM PAYMENT
+===================================================================
+
+3.1 Premium Payment Modes
+- Annual (yearly)
+- Half-yearly (6 months)
+- Quarterly (3 months)
+- Monthly
+
+Note: Annual mode is most economical (no modal loading charges)
+
+3.2 Grace Period
+- One month for yearly, half-yearly, quarterly modes
+- 15 days for monthly mode
+- Policy remains in force during grace period
+- If death occurs during grace period, claim payable (premium deducted)
+
+3.3 Revival of Lapsed Policy
+If policy lapses due to non-payment:
+- Can be revived within 5 years (for term plans: 2 years)
+- Must pay all outstanding premiums with interest
+- May require fresh medical examination
+- Insurer may reject revival based on current health status
+
+===================================================================
+SECTION 4: SUM ASSURED CALCULATION
+===================================================================
+
+4.1 Human Life Value (HLV) Method
+HLV = Annual income × Working years remaining × (1 - % of income for self)
+Recommended coverage: 10-15 times annual income
+
+4.2 Minimum Coverage Guidelines
+According to IRDAI:
+- Minimum sum assured: At least 10 times annual premium (for ULIPs and traditional plans with investment component)
+- For pure term insurance: Can be higher multiples as premiums are low
+
+4.3 Maximum Coverage
+Based on income proof:
+- Annual income up to Rs. 5 lakhs: Maximum 10 times
+- Annual income Rs. 5-20 lakhs: Maximum 15 times
+- Annual income above Rs. 20 lakhs: Maximum 20 times
+
+===================================================================
+SECTION 5: CLAIM SETTLEMENT
+===================================================================
+
+5.1 Death Claim Documentation
+Required documents:
+- Death certificate (original)
+- Claim form (duly filled by nominee)
+- Policy document (original)
+- Proof of identity of claimant
+- Proof of age of deceased (if not verified)
+- Medical certificate/hospital records
+- FIR and post-mortem report (for unnatural death)
+- Legal heir certificate (if no nomination)
+
+5.2 Claim Settlement Timeline
+- Claims up to Rs. 1 lakh: Within 30 days
+- Claims exceeding Rs. 1 lakh: Investigation may be done, settle within reasonable time
+- If claim rejected: Must communicate in writing with reasons
+
+5.3 Contestability Period
+- First 3 years from policy start: Insurer can investigate and reject claim for misrepresentation/fraud
+- After 3 years: Claim cannot be rejected except for proven fraud
+- For revival: Fresh 3-year contestability from revival date
+
+5.4 Claim Repudiation Grounds
+Valid reasons for claim rejection:
+- Material misrepresentation or suppression of facts in proposal form
+- Non-disclosure of pre-existing diseases
+- Incorrect age/income declaration (material to acceptance)
+- Fraud in proposal or claim stage
+- Death due to suicide within 1 year of policy start
+
+5.5 Suicide Clause
+- If death by suicide within 1 year from policy start: Claim not payable
+- After 1 year: Full claim payable
+- For revival: Fresh 1-year clause from revival date
+- Insurer returns 80% of premiums paid (excluding first-year premium)
+
+===================================================================
+SECTION 6: SURRENDER AND LOANS
+===================================================================
+
+6.1 Surrender Value
+Conditions for surrender:
+- Policy must acquire surrender value (minimum 2-3 years premiums paid)
+- Surrender value = % of premiums paid × Number of years of premium payment
+- Guaranteed surrender value (GSV): Minimum as per IRDAI guidelines
+- Special surrender value (SSV): Higher of GSV or calculated based on policy type
+
+GSV Rates (Minimum):
+- After 2 years: 30% of premiums paid (excluding first year)
+- After 3 years and above: Higher percentage based on policy type
+
+6.2 Policy Loans
+- Available after policy acquires surrender value
+- Loan amount: Usually 80-90% of surrender value
+- Interest charged (typically 8-10% per annum)
+- Loan can be repaid anytime during policy term
+- If not repaid, adjusted from death benefit or maturity benefit
+
+6.3 Paid-Up Policy
+If premium payment stopped but surrender value acquired:
+- Policy converts to paid-up
+- Reduced sum assured = Original SA × (Premiums paid / Total premiums payable)
+- Death benefit = Paid-up value + accrued bonuses
+- No need to pay further premiums
+
+===================================================================
+SECTION 7: UNIT LINKED INSURANCE PLANS (ULIPs)
+===================================================================
+
+7.1 ULIP Regulations
+IRDAI mandates:
+- Minimum sum assured: 10 times annual premium (or 7 times for single premium)
+- Maximum charges clearly disclosed
+- Lock-in period: 5 years (no withdrawals/surrenders)
+- Fund switching allowed (free switches per year as per policy)
+- Portfolio management strategies offered
+
+7.2 Charges in ULIPs
+- Premium allocation charges (reduced over policy years)
+- Policy administration charges (monthly)
+- Fund management charges (FMC): Maximum 1.35% per annum
+- Mortality charges (for insurance cover)
+- Surrender charges (if surrendered before maturity)
+- Switching charges (beyond free switches)
+
+7.3 Transparency Requirements
+- Unit price declared daily on insurer's website
+- Fund value statement sent to policyholder regularly
+- NAV calculation methodology clearly stated
+- All charges disclosed upfront in benefit illustration
+
+===================================================================
+SECTION 8: TAX BENEFITS
+===================================================================
+
+8.1 Premium Payment (Section 80C)
+- Deduction up to Rs. 1.5 lakhs per year
+- Applicable for premiums paid for self, spouse, children
+- Premium should not exceed 10% of sum assured (for policies issued after 1-Apr-2012)
+
+8.2 Maturity/Death Benefit (Section 10(10D))
+Tax-free if:
+- Premium ≤ 10% of sum assured (policies issued 1-Apr-2012 to 31-Mar-2023)
+- Premium ≤ Rs. 5 lakhs per year (policies issued after 1-Apr-2023)
+
+Exceptions: ULIPs maturity proceeds are tax-free regardless of premium (if lock-in completed)
+
+8.3 GST on Life Insurance
+- Term insurance: 18% GST on premium
+- Traditional plans (endowment, whole life): 18% GST
+- ULIPs: 18% GST (excluding investment portion)
+- Annuity/pension plans purchased before retirement age: 18% GST
+
+===================================================================
+SECTION 9: RIDERS AND ADD-ONS
+===================================================================
+
+9.1 Common Riders
+A) Accidental Death Benefit Rider
+- Additional sum assured if death due to accident
+- Usually equal to or double of base sum assured
+
+B) Critical Illness Rider
+- Lump sum on diagnosis of critical illness (cancer, heart attack, stroke, etc.)
+- Usually 25+ critical illnesses covered
+- Coverage: 25-100% of base sum assured
+
+C) Accidental Total and Permanent Disability (ATPD)
+- Waiver of future premiums if permanently disabled due to accident
+- May also pay lump sum
+
+D) Waiver of Premium Rider
+- Future premiums waived if policyholder suffers specified disability/illness
+- Policy continues with full benefits
+
+E) Income Benefit Rider
+- Monthly/annual income to family if policyholder dies
+- Term: 5-10 years of monthly income
+
+9.2 Rider Premium
+- Additional premium charged for riders
+- Riders cease if base policy lapses or surrendered
+- Rider sum assured cannot exceed base sum assured
+
+===================================================================
+SECTION 10: GRIEVANCE REDRESSAL
+===================================================================
+
+10.1 Complaint Mechanism
+Step 1: Insurer's Grievance Officer
+- Lodge complaint with insurer
+- Expect response within 15 days
+
+Step 2: Insurance Ombudsman
+- Jurisdiction: Up to Rs. 50 lakhs
+- Free of cost
+- Decision binding on insurer (not on policyholder)
+
+Step 3: IRDAI IGMS
+- File online complaint on IRDAI portal
+- IRDAI monitors resolution
+
+10.2 Common Grievances
+- Delayed claim settlement
+- Claim repudiation without valid reason
+- Mis-selling of policies
+- Non-receipt of policy documents
+- Premium payment issues
+- Incorrect policy details
+
+===================================================================
+SECTION 11: POLICY ILLUSTRATIONS AND DISCLOSURES
+===================================================================
+
+11.1 Benefit Illustration Requirements
+Insurers must provide:
+- Two scenarios: Guaranteed and non-guaranteed benefits
+- Maturity values at different rates of return (4%, 8%)
+- Effect of all charges on policy value (for ULIPs)
+- Comparison with premium paid
+
+11.2 Key Mandatory Disclosures
+- All exclusions clearly stated
+- Claim settlement ratio of insurer
+- Grievance redressal contact details
+- Solvency ratio of insurer
+- IRDAI registration number
+
+===================================================================
+SECTION 12: RECENT REGULATORY CHANGES (2024)
+===================================================================
+
+12.1 Key Updates
+- Enhanced focus on transparency in ULIPs
+- Reduced contestability period discussions (some proposals)
+- Digital onboarding and e-KYC permitted
+- Video-based proposal and medical examination allowed
+- Instant policy issuance for standard cases
+
+12.2 COVID-19 Impact
+- COVID-19 deaths treated as normal death claims (not excluded)
+- No special waiting period for COVID-related claims
+- Contactless claim settlement processes
+
+===================================================================
+COMPLIANCE CHECKLIST
+===================================================================
+
+✓ Read policy document thoroughly before purchase
+✓ Disclose all material facts accurately in proposal form
+✓ Understand contestability and suicide clauses
+✓ Nominate beneficiaries and keep nomination updated
+✓ Pay premiums on time to avoid lapse
+✓ Maintain income proof for tax benefits
+✓ Keep policy documents safe
+✓ Inform insurer of address/contact changes
+✓ Understand all charges (especially for ULIPs)
+
+For latest regulations: www.irdai.gov.in
+
+Document Version: 2024.1
+Last Updated: January 2024

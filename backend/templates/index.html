@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaralPolicy - AI Insurance Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+Devanagari:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6750A4;
+            --primary-light: #EADDFF;
+            --secondary: #625B71;
+            --surface: #FFFBFE;
+            --surface-variant: #E7E0EC;
+            --error: #BA1A1A;
+            --success: #198754;
+            --text: #1C1B1F;
+            --text-secondary: #49454F;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', 'Noto Sans Devanagari', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #9333EA 100%);
+            border-radius: 24px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 12px; }
+        .header .tagline { font-size: 1.5rem; font-weight: 500; opacity: 0.95; margin-bottom: 8px; }
+        .header .subtitle { font-size: 1.1rem; opacity: 0.85; }
+
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary);
+        }
+
+        .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(103,80,164,0.1);
+        }
+
+        .card h2 { margin-bottom: 20px; color: var(--primary); font-weight: 600; font-size: 1.5rem; }
+
+        .upload-area {
+            border: 3px dashed var(--primary);
+            border-radius: 16px;
+            padding: 50px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--primary-light);
+        }
+
+        .upload-area:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(103,80,164,0.2); }
+        .upload-icon { font-size: 4rem; margin-bottom: 16px; }
+        .upload-text { font-size: 1.25rem; font-weight: 500; margin-bottom: 8px; }
+        .upload-subtext { color: var(--text-secondary); margin-bottom: 20px; }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(103,80,164,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(103,80,164,0.4); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .feature-item {
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            background: var(--surface-variant);
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover { transform: translateX(8px); }
+        .feature-icon { font-size: 2rem; margin-bottom: 8px; color: var(--primary); }
+        .feature-title { font-weight: 600; margin-bottom: 4px; font-size: 1.1rem; }
+        .feature-desc { font-size: 0.95rem; color: var(--text-secondary); }
+
+        .results-section { grid-column: 1 / -1; display: none; animation: fadeIn 0.5s; }
+        .results-section.show { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .result-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .result-content {
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .tts-controls { display: flex; gap: 10px; }
+
+        .tts-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tts-btn:hover { background: #5640a0; transform: scale(1.05); }
+        .tts-btn .material-icons { font-size: 18px; }
+
+        .term-item {
+            padding: 16px;
+            margin-bottom: 12px;
+            background: var(--surface-variant);
+            border-radius: 10px;
+            border-left: 3px solid var(--success);
+        }
+
+        .term-name { font-weight: 600; font-size: 1.1rem; color: var(--primary); margin-bottom: 6px; }
+        .term-definition { color: var(--text); font-size: 1rem; }
+
+        .exclusion-item {
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 3px solid #ff9800;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .coverage-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--surface-variant);
+        }
+
+        .coverage-label { font-weight: 600; color: var(--text-secondary); }
+        .coverage-value { color: var(--text); font-weight: 500; }
+
+        .loading { display: none; text-align: center; padding: 40px; }
+        .loading.show { display: block; }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--surface-variant);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .metric-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .metric-high { background: #d4edda; color: #155724; }
+        .metric-medium { background: #fff3cd; color: #856404; }
+        .metric-low { background: #f8d7da; color: #721c24; }
+
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2rem; }
+            .lang-toggle { position: relative; top: 0; right: 0; margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="switchLanguage('en')" id="langEnBtn">English</button>
+                <button class="lang-btn" onclick="switchLanguage('hi')" id="langHiBtn">हिंदी</button>
+            </div>
+            <h1 id="appTitle">📄 SaralPolicy</h1>
+            <div class="tagline" id="tagline">Insurance ka fine print, ab saaf saaf.</div>
+            <p class="subtitle" id="subtitle">AI-Powered Insurance Document Analysis with Complete Privacy</p>
+        </div>
+
+        <div class="main-grid">
+            <div class="card">
+                <h2 id="uploadTitle">Upload Policy Document</h2>
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text" id="uploadText">Drop your policy here or click to browse</div>
+                    <div class="upload-subtext" id="uploadSubtext">Supports PDF, DOCX, TXT (max 10MB)</div>
+                    <input type="file" id="fileInput" style="display: none;" accept=".pdf,.docx,.txt" onchange="handleFileSelect(event)">
+                </div>
+                <button class="btn" id="analyzeBtn" onclick="analyzeDocument()" disabled>
+                    <span class="material-icons">analytics</span>
+                    <span id="analyzeBtnText">Analyze Policy</span>
+                </button>
+            </div>
+
+            <div class="card">
+                <h2 id="featuresTitle">Key Features</h2>
+                <div class="feature-item">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-title" id="feature1Title">100% Local AI Processing</div>
+                    <div class="feature-desc" id="feature1Desc">No cloud uploads - your data stays on your device</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-title" id="feature2Title">Complete Privacy</div>
+                    <div class="feature-desc" id="feature2Desc">Zero data leakage with advanced PII protection</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title" id="feature3Title">Smart Analysis</div>
+                    <div class="feature-desc" id="feature3Desc">Extracts key terms, coverage, and exclusions automatically</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔊</div>
+                    <div class="feature-title" id="feature4Title">Text-to-Speech</div>
+                    <div class="feature-desc" id="feature4Desc">Listen to your policy in Hindi or English</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p id="loadingText">Analyzing your policy document...</p>
+        </div>
+
+        <div class="results-section card" id="resultsSection">
+            <h2 id="resultsTitle">📊 Analysis Results</h2>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+
+    <script>
+        let selectedFile = null;
+        let analysisData = null;
+        let currentLanguage = 'en';
+        let audioElement = null;
+
+        const translations = {
+            en: {
+                appTitle: "📄 SaralPolicy",
+                tagline: "Insurance ka fine print, ab saaf saaf.",
+                subtitle: "AI-Powered Insurance Document Analysis with Complete Privacy",
+                uploadTitle: "Upload Policy Document",
+                uploadText: "Drop your policy here or click to browse",
+                uploadSubtext: "Supports PDF, DOCX, TXT (max 10MB)",
+                analyzeBtnText: "Analyze Policy",
+                featuresTitle: "Key Features",
+                feature1Title: "100% Local AI Processing",
+                feature1Desc: "No cloud uploads - your data stays on your device",
+                feature2Title: "Complete Privacy",
+                feature2Desc: "Zero data leakage with advanced PII protection",
+                feature3Title: "Smart Analysis",
+                feature3Desc: "Extracts key terms, coverage, and exclusions automatically",
+                feature4Title: "Text-to-Speech",
+                feature4Desc: "Listen to your policy in Hindi or English",
+                loadingText: "Analyzing your policy document...",
+                resultsTitle: "📊 Analysis Results",
+                policySummary: "Policy Summary",
+                keyTerms: "Important Terms",
+                exclusions: "Exclusions & Limitations",
+                coverage: "Coverage Details",
+                qualityMetrics: "Quality Metrics",
+                confidenceScore: "Confidence Score",
+                qualityGrade: "Quality Grade",
+                expertReview: "⚠️ Requires Expert Review"
+            },
+            hi: {
+                appTitle: "📄 सरल पॉलिसी",
+                tagline: "बीमा की छोटी लिखावट, अब साफ़-साफ़।",
+                subtitle: "पूर्ण गोपनीयता के साथ AI-संचालित बीमा दस्तावेज़ विश्लेषण",
+                uploadTitle: "पॉलिसी दस्तावेज़ अपलोड करें",
+                uploadText: "यहां अपनी पॉलिसी छोड़ें या ब्राउज़ करने के लिए क्लिक करें",
+                uploadSubtext: "PDF, DOCX, TXT समर्थित (अधिकतम 10MB)",
+                analyzeBtnText: "पॉलिसी का विश्लेषण करें",
+                featuresTitle: "मुख्य विशेषताएं",
+                feature1Title: "100% स्थानीय AI प्रोसेसिंग",
+                feature1Desc: "कोई क्लाउड अपलोड नहीं - आपका डेटा आपके डिवाइस पर रहता है",
+                feature2Title: "पूर्ण गोपनीयता",
+                feature2Desc: "उन्नत PII सुरक्षा के साथ शून्य डेटा रिसाव",
+                feature3Title: "स्मार्ट विश्लेषण",
+                feature3Desc: "स्वचालित रूप से मुख्य शर्तें, कवरेज और बहिष्करण निकालता है",
+                feature4Title: "टेक्स्ट-टू-स्पीच",
+                feature4Desc: "हिंदी या अंग्रेज़ी में अपनी पॉलिसी सुनें",
+                loadingText: "आपकी पॉलिसी दस्तावेज़ का विश्लेषण किया जा रहा है...",
+                resultsTitle: "📊 विश्लेषण परिणाम",
+                policySummary: "पॉलिसी सारांश",
+                keyTerms: "महत्वपूर्ण शर्तें",
+                exclusions: "बहिष्करण और सीमाएं",
+                coverage: "कवरेज विवरण",
+                qualityMetrics: "गुणवत्ता मेट्रिक्स",
+                confidenceScore: "विश्वास स्कोर",
+                qualityGrade: "गुणवत्ता ग्रेड",
+                expertReview: "⚠️ विशेषज्ञ समीक्षा आवश्यक"
+            }
+        };
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            document.getElementById('langEnBtn').classList.toggle('active', lang === 'en');
+            document.getElementById('langHiBtn').classList.toggle('active', lang === 'hi');
+            
+            const t = translations[lang];
+            for (const key in t) {
+                const elem = document.getElementById(key);
+                if (elem) elem.textContent = t[key];
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                selectedFile = file;
+                document.getElementById('analyzeBtn').disabled = false;
+                document.getElementById('uploadText').textContent = `Selected: ${file.name}`;
+                document.getElementById('uploadSubtext').textContent = `${(file.size / 1024 / 1024).toFixed(2)} MB`;
+            }
+        }
+
+        async function analyzeDocument() {
+            if (!selectedFile) return;
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('analyzeBtn').disabled = true;
+
+            try {
+                const response = await fetch('/upload', { method: 'POST', body: formData });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    analysisData = result.analysis;
+                    await displayResults(result);
+                } else {
+                    const error = await response.json();
+                    showError(error.detail || 'Analysis failed');
+                }
+            } catch (error) {
+                showError('Network error: ' + error.message);
+            } finally {
+                document.getElementById('loading').classList.remove('show');
+                document.getElementById('analyzeBtn').disabled = false;
+            }
+        }
+
+        async function displayResults(result) {
+            const resultsContent = document.getElementById('resultsContent');
+            const analysis = result.analysis;
+            const t = translations[currentLanguage];
+
+            let html = `
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-title">
+                            <span class="material-icons">summarize</span>
+                            ${t.policySummary}
+                        </div>
+                        <div class="tts-controls">
+                            <button class="tts-btn" onclick="speakText('${escapeHtml(analysis.summary || '')}', 'en')">
+                                <span class="material-icons">volume_up</span> EN
+                            </button>
+                            <button class="tts-btn" onclick="speakText('${escapeHtml(analysis.summary || '')}', 'hi')">
+                                <span class="material-icons">volume_up</span> HI
+                            </button>
+                        </div>
+                    </div>
+                    <div class="result-content">${formatText(analysis.summary || 'No summary available')}</div>
+                </div>
+            `;
+
+            if (analysis.key_terms && analysis.key_terms.length) {
+                html += `<div class="result-card">
+                    <div class="result-title">
+                        <span class="material-icons">key</span>
+                        ${t.keyTerms}
+                    </div>
+                    <div class="result-content">`;
+                
+                analysis.key_terms.forEach(term => {
+                    html += `<div class="term-item">
+                        <div class="term-name">${term.term || term.name || 'Term'}</div>
+                        <div class="term-definition">${term.definition || term.description || ''}</div>
+                    </div>`;
+                });
+                
+                html += `</div></div>`;
+            }
+
+            if (analysis.exclusions && analysis.exclusions.length) {
+                html += `<div class="result-card">
+                    <div class="result-title">
+                        <span class="material-icons">block</span>
+                        ${t.exclusions}
+                    </div>
+                    <div class="result-content">`;
+                
+                analysis.exclusions.forEach(exclusion => {
+                    html += `<div class="exclusion-item">
+                        <span class="material-icons" style="color: #ff9800;">warning</span>
+                        <div>${exclusion}</div>
+                    </div>`;
+                });
+                
+                html += `</div></div>`;
+            }
+
+            if (analysis.coverage) {
+                html += `<div class="result-card">
+                    <div class="result-title">
+                        <span class="material-icons">health_and_safety</span>
+                        ${t.coverage}
+                    </div>
+                    <div class="result-content">`;
+                
+                for (const [key, value] of Object.entries(analysis.coverage)) {
+                    html += `<div class="coverage-item">
+                        <div class="coverage-label">${formatLabel(key)}</div>
+                        <div class="coverage-value">${value}</div>
+                    </div>`;
+                }
+                
+                html += `</div></div>`;
+            }
+
+            if (analysis.evaluation || analysis.confidence_score !== undefined) {
+                const score = analysis.confidence_score || analysis.evaluation?.confidence_score || 0;
+                const grade = analysis.quality_grade || analysis.evaluation?.quality_grade || 'N/A';
+                
+                html += `<div class="result-card">
+                    <div class="result-title">
+                        <span class="material-icons">analytics</span>
+                        ${t.qualityMetrics}
+                    </div>
+                    <div class="result-content">
+                        <span class="metric-badge ${score > 0.85 ? 'metric-high' : score > 0.7 ? 'metric-medium' : 'metric-low'}">
+                            ${t.confidenceScore}: ${(score * 100).toFixed(1)}%
+                        </span>
+                        <span class="metric-badge metric-medium">
+                            ${t.qualityGrade}: ${grade}
+                        </span>
+                        ${analysis.hitl_triggered || analysis.requires_hitl_review ? 
+                            `<div style="margin-top: 16px; color: var(--error); font-weight: 600;">${t.expertReview}</div>` : ''}
+                    </div>
+                </div>`;
+            }
+
+            resultsContent.innerHTML = html;
+            document.getElementById('resultsSection').classList.add('show');
+        }
+
+        async function speakText(text, language) {
+            try {
+                // Stop any currently playing audio
+                if (audioElement) {
+                    audioElement.pause();
+                    audioElement = null;
+                }
+
+                // Show loading indicator
+                console.log('Generating speech...');
+
+                const response = await fetch('/tts/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text, language: language })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    // Create and play audio element
+                    audioElement = new Audio(result.audio_url);
+                    audioElement.play();
+                    console.log('Playing audio...');
+                } else {
+                    // Fallback to browser speech synthesis
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = language === 'hi' ? 'hi-IN' : 'en-US';
+                    speechSynthesis.speak(utterance);
+                }
+            } catch (error) {
+                console.error('TTS Error:', error);
+                // Fallback to browser speech synthesis
+                try {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.lang = language === 'hi' ? 'hi-IN' : 'en-US';
+                    speechSynthesis.speak(utterance);
+                } catch (e) {
+                    alert('Text-to-speech is not available on this device.');
+                }
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML.replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+        }
+
+        function formatText(text) {
+            return text.replace(/\n/g, '<br>');
+        }
+
+        function formatLabel(label) {
+            return label.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function showError(message) {
+            document.getElementById('resultsContent').innerHTML = `
+                <div class="result-card" style="border-left-color: var(--error);">
+                    <div class="result-title" style="color: var(--error);">
+                        <span class="material-icons">error</span>
+                        Error
+                    </div>
+                    <div class="result-content" style="color: var(--error);">${message}</div>
+                </div>
+            `;
+            document.getElementById('resultsSection').classList.add('show');
+        }
+
+        // Drag and drop
+        const uploadArea = document.querySelector('.upload-area');
+        uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.style.transform = 'scale(1.02)'; });
+        uploadArea.addEventListener('dragleave', () => { uploadArea.style.transform = 'scale(1)'; });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.transform = 'scale(1)';
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                document.getElementById('fileInput').files = files;
+                handleFileSelect({ target: { files: files } });
+            }
+        });
+    </script>
+</body>
+</html>
