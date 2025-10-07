@@ -1,7 +1,7 @@
 # 🏗️ SaralPolicy System Architecture
 
 **Version:** 1.0  
-**Last Updated:** January 2025  
+**Last Updated:** October 2025  
 **Author:** SaralPolicy Team
 
 ---
@@ -328,7 +328,7 @@ get_stats()  # Service statistics
   "source": "filename.pdf",
   "chunk_index": 0,
   "type": "policy_section",
-  "timestamp": "2025-01-07T12:00:00"
+  "timestamp": "2025-10-07T12:00:00"
 }
 ```
 
@@ -599,5 +599,5 @@ curl http://localhost:8000/rag/stats
 
 **For questions or contributions, see:** [CONTRIBUTING.md](../CONTRIBUTING.md)
 
-**Last Updated:** January 7, 2025  
+**Last Updated:** October 7, 2025  
 **Version:** 1.0.0
