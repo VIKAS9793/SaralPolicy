@@ -244,105 +244,103 @@ The following diagram illustrates the complete SaralPolicy system architecture w
 
 ```mermaid
 graph TB
-    subgraph "Frontend Layer"
-        UI["🎨 Material 3 Web UI<br/>Drag & Drop, Q&A Interface<br/>Responsive Design"]
+    subgraph FE["🎨 FRONTEND LAYER"]
+        UI["<b>Material 3 Web UI</b><br/>• Drag & Drop Upload<br/>• Q&A Interface<br/>• Responsive Design"]
     end
 
-    subgraph "API Layer"
-        API["⚡ FastAPI Server<br/>Main Application<br/>Session Management"]
+    subgraph API_LAYER["⚡ API LAYER"]
+        API["<b>FastAPI Server</b><br/>• Request Routing<br/>• Session Management<br/>• Response Formatting"]
     end
 
-    subgraph "Core Services"
-        LLM["🤖 Ollama LLM Service<br/>Gemma 3 4B Model<br/>Local Inference"]
-        RAG["🧠 RAG Service<br/>Hybrid Search Engine<br/>BM25 + Vector Search"]
-        DOC["📄 Document Processor<br/>PyPDF2, python-docx, Pillow<br/>Multi-format Support"]
+    subgraph CORE["🔧 CORE SERVICES"]
+        DOC["<b>Document Processor</b><br/>• PyPDF2 (Parallel)<br/>• python-docx<br/>• Multi-format Support"]
+        RAG["<b>RAG Service</b><br/>• Hybrid Search<br/>• Context Retrieval<br/>• Prompt Engineering"]
+        LLM["<b>Ollama LLM</b><br/>• Gemma 3 4B (Local)<br/>• Zero Cloud Calls<br/>• Privacy-First"]
     end
 
-    subgraph "Knowledge & Storage"
-        CHROMA[("💾 ChromaDB<br/>Vector Store<br/>Persistent Storage")]
-        IRDAI[("📚 IRDAI Knowledge Base<br/>39 Chunks<br/>3 Regulatory Documents")]
-        EMBED["🔤 Embeddings Service<br/>nomic-embed-text (274MB)<br/>Via Ollama"]
+    subgraph STORAGE["💾 KNOWLEDGE & STORAGE"]
+        EMBED["<b>Embeddings</b><br/>nomic-embed-text<br/>274MB via Ollama"]
+        CHROMA[("<b>ChromaDB</b><br/>Vector Store<br/>Persistent Storage")]
+        IRDAI[("<b>IRDAI Knowledge</b><br/>39 Regulatory Chunks<br/>Pre-indexed")]
     end
 
-    subgraph "Safety & Quality Layer"
-        GUARD["🔒 Guardrails Service<br/>Input Validation<br/>PII Protection<br/>Hallucination Prevention"]
-        HITL["👥 Human-in-the-Loop<br/>Expert Review System<br/>Low Confidence Handler"]
-        EVAL["📊 Evaluation Frameworks<br/>TruLens, Giskard<br/>DeepEval Quality Metrics"]
+    subgraph SEARCH["🔍 SEARCH COMPONENTS"]
+        BM25["<b>BM25 Search</b><br/>Keyword Matching<br/>rank-bm25"]
+        VSEARCH["<b>Vector Search</b><br/>Semantic Similarity<br/>ChromaDB Queries"]
     end
 
-    subgraph "Auxiliary Services"
-        TTS["🔊 TTS Service<br/>pyttsx3, gTTS<br/>Audio Output"]
-        TRANS["🌐 Translation Service<br/>Hindi/English<br/>googletrans"]
+    subgraph SAFETY["🛡️ SAFETY & QUALITY"]
+        GUARD["<b>Guardrails</b><br/>• PII Protection<br/>• Input Validation<br/>• Hallucination Check"]
+        EVAL["<b>Evaluation</b><br/>• TruLens Metrics<br/>• Giskard Tests<br/>• DeepEval"]
+        HITL["<b>HITL System</b><br/>• Expert Review<br/>• Low Confidence<br/>• Quality Assurance"]
     end
 
-    subgraph "Search Components"
-        BM25["🔍 BM25 Keyword Search<br/>rank-bm25<br/>Lexical Matching"]
-        VECTOR["🎯 Vector Search<br/>Semantic Similarity<br/>ChromaDB Queries"]
+    subgraph AUX["🔊 AUXILIARY SERVICES"]
+        TTS["<b>Text-to-Speech</b><br/>pyttsx3, gTTS"]
+        TRANS["<b>Translation</b><br/>Hindi/English<br/>googletrans"]
     end
+
+    %% Primary User Flow (Bold)
+    UI ====>|"1. Upload<br/>Document"| API
+    API ====>|"2. Extract<br/>Text"| DOC
+    DOC ====>|"3. Index &<br/>Embed"| RAG
+    RAG ====>|"4. Retrieve<br/>Context"| CHROMA
+    RAG ====>|"5. Generate<br/>Prompt"| LLM
+    LLM ====>|"6. Return<br/>Analysis"| API
+    API ====>|"7. Display<br/>Results"| UI
+
+    %% Document Processing
+    DOC -->|Generate Embeddings| EMBED
+    EMBED -->|Store Vectors| CHROMA
+    IRDAI -.->|Pre-loaded| CHROMA
+
+    %% RAG Search Pipeline
+    RAG -->|Keyword Query| BM25
+    RAG -->|Semantic Query| VSEARCH
+    BM25 -->|Results| CHROMA
+    VSEARCH -->|Results| CHROMA
+    IRDAI -.->|Augment Context| RAG
+
+    %% Safety & Quality
+    API -->|Validate| GUARD
+    LLM -->|Evaluate| EVAL
+    EVAL -->|If Low Confidence| HITL
+    GUARD -->|Block/Flag| API
+    HITL -->|Expert Verified| API
 
     %% User Interactions
-    UI -->|Upload Document| API
-    UI -->|Ask Question| API
-    UI -->|View Results| API
-
-    %% API Orchestration
-    API -->|Process Document| DOC
-    API -->|Generate Analysis| LLM
-    API -->|Query Knowledge| RAG
-    API -->|Validate Input| GUARD
-    API -->|Check Quality| EVAL
-
-    %% Document Processing Flow
-    DOC -->|Extract Text| RAG
-    DOC -->|Generate Embeddings| EMBED
-
-    %% RAG Pipeline
-    RAG -->|Hybrid Search| BM25
-    RAG -->|Hybrid Search| VECTOR
-    BM25 -->|Query| CHROMA
-    VECTOR -->|Query| CHROMA
-    RAG -->|Augment Context| IRDAI
-    RAG -->|Send Prompt| LLM
-
-    %% Knowledge Storage
-    EMBED -->|Store Vectors| CHROMA
-    IRDAI -.->|Pre-indexed| CHROMA
-
-    %% LLM Processing
-    LLM -->|Generate Response| API
-    LLM -->|Quality Check| EVAL
-
-    %% Safety Pipeline
-    GUARD -->|Flag PII| API
-    GUARD -->|Block Unsafe| API
-    EVAL -->|Low Confidence| HITL
-    HITL -->|Expert Review| API
+    UI -->|Ask Questions| API
+    API -->|Q&A via RAG| RAG
 
     %% Output Enhancement
     API -->|Generate Audio| TTS
-    API -->|Translate| TRANS
-    TTS -->|Return Audio| UI
-    TRANS -->|Bilingual Output| UI
+    API -->|Translate Text| TRANS
+    TTS -->|Audio File| UI
+    TRANS -->|Hindi Output| UI
 
-    %% Styling
-    classDef frontend fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    classDef api fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef core fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef storage fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-    classDef safety fill:#ffebee,stroke:#d32f2f,stroke-width:2px
-    classDef auxiliary fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef search fill:#e0f2f1,stroke:#00796b,stroke-width:2px
+    %% Styling with High Contrast
+    classDef frontendStyle fill:#0d47a1,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef apiStyle fill:#4a148c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef coreStyle fill:#e65100,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef storageStyle fill:#1b5e20,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef searchStyle fill:#006064,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef safetyStyle fill:#b71c1c,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef auxStyle fill:#880e4f,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    classDef subgraphStyle fill:#f5f5f5,stroke:#424242,stroke-width:2px
 
-    class UI frontend
-    class API api
-    class LLM,RAG,DOC core
-    class CHROMA,IRDAI,EMBED storage
-    class GUARD,HITL,EVAL safety
-    class TTS,TRANS auxiliary
-    class BM25,VECTOR search
+    class UI frontendStyle
+    class API apiStyle
+    class DOC,RAG,LLM coreStyle
+    class EMBED,CHROMA,IRDAI storageStyle
+    class BM25,VSEARCH searchStyle
+    class GUARD,EVAL,HITL safetyStyle
+    class TTS,TRANS auxStyle
+    class FE,API_LAYER,CORE,STORAGE,SEARCH,SAFETY,AUX subgraphStyle
 ```
 
 ### Architecture Highlights
+
+> **📖 For a comprehensive breakdown of the architecture, see:** [SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md)
 
 **🔄 Data Flow:**
 1. User uploads document via Material 3 UI
