@@ -38,104 +38,62 @@ SaralPolicy is a **privacy-first, locally-run AI system** for analyzing Indian i
 
 ```mermaid
 graph TB
-    subgraph FE["🎨 FRONTEND LAYER"]
-        UI["<b>Material 3 Web UI</b><br/>• Drag & Drop Upload<br/>• Q&A Interface<br/>• Responsive Design"]
+    subgraph FE["FRONTEND LAYER"]
+        UI["Material 3 Web UI"]
     end
 
-    subgraph API_LAYER["⚡ API LAYER"]
-        API["<b>FastAPI Gateway</b><br/>• app/routes<br/>• Dependencies<br/>• Request Routing"]
+    subgraph API_LAYER["API LAYER"]
+        API["FastAPI Gateway"]
     end
 
-    subgraph CORE["🔧 CORE SERVICES"]
-        DOC["<b>Document Service</b><br/>• File Parsing (PDF/DOCX)<br/>• Hashing & Caching<br/>• Text Extraction"]
-        POLICY["<b>Policy Service</b><br/>• Orchestration Logic<br/>• Analysis Workflow<br/>• Citation Management"]
-        RAG["<b>RAG Service</b><br/>• Hybrid Search<br/>• Context Retrieval<br/>• Knowledge Access"]
-        LLM["<b>Ollama LLM</b><br/>• Gemma 2 2B (Local)<br/>• Zero Cloud Calls<br/>• Privacy-First"]
+    subgraph CORE["CORE SERVICES"]
+        DOC["Document Service"]
+        POLICY["Policy Service"]
+        RAG["RAG Service"]
+        LLM["Ollama LLM"]
     end
 
-    subgraph STORAGE["💾 KNOWLEDGE & STORAGE"]
-        EMBED["<b>Embeddings</b><br/>nomic-embed-text<br/>Ollama"]
-        CHROMA[("<b>ChromaDB</b><br/>Vector Store<br/>Persistent Storage")]
-        IRDAI[("<b>IRDAI Knowledge</b><br/>39 Regulatory Chunks<br/>Pre-indexed")]
+    subgraph STORAGE["STORAGE"]
+        CHROMA["ChromaDB"]
+        IRDAI["IRDAI Knowledge"]
     end
 
-    subgraph SEARCH["🔍 SEARCH COMPONENTS"]
-        BM25["<b>BM25 Search</b><br/>Keyword Matching<br/>rank-bm25"]
-        VSEARCH["<b>Vector Search</b><br/>Semantic Similarity<br/>ChromaDB Queries"]
+    subgraph SAFETY["SAFETY & QUALITY"]
+        GUARD["Guardrails"]
+        EVAL["Evaluation"]
+        HITL["HITL Services"]
     end
 
-    subgraph SAFETY["🛡️ SAFETY & QUALITY"]
-        GUARD["<b>Guardrails</b><br/>• PII Protection<br/>• Input Validation<br/>• Hallucination Check"]
-        EVAL["<b>Evaluation</b><br/>• RAGAS Metrics<br/>• Heuristic Fallback<br/>• Hallucination Check"]
-        HITL["<b>HITL Services</b><br/>• Expert Review<br/>• Low Confidence<br/>• Quality Assurance"]
+    subgraph AUX["AUXILIARY SERVICES"]
+        TTS["Text-to-Speech"]
+        TRANS["Translation"]
     end
 
-    subgraph AUX["🔊 AUXILIARY SERVICES"]
-        TTS["<b>Text-to-Speech</b><br/>pyttsx3, gTTS"]
-        TRANS["<b>Translation</b><br/>Argos Translate (Offline)<br/>Hindi/English"]
-    end
-
-    %% Primary User Flow (Bold)
-    UI ====>|"1. Upload Request"| API
-    API ====>|"2. Delegate"| DOC
-    DOC ====>|"3. Parsed Text"| API
+    UI -->|Upload| API
+    API -->|Parse| DOC
+    DOC -->|Text| API
     
-    UI ====>|"4. Analyze/Ask"| API
-    API ====>|"5. Orchestrate"| POLICY
+    UI -->|Analyze| API
+    API -->|Orchestrate| POLICY
     
-    POLICY ====>|"6. Retrieve"| RAG
-    RAG ====>|"7. Search"| CHROMA
+    POLICY -->|Retrieve| RAG
+    RAG -->|Query| CHROMA
+    IRDAI -->|Knowledge| CHROMA
     
-    POLICY ====>|"8. Generate"| LLM
-    LLM ====>|"9. Response"| POLICY
-    POLICY ====>|"10. Result"| API
-    API ====>|"11. Display"| UI
+    POLICY -->|Generate| LLM
+    LLM -->|Response| POLICY
+    POLICY -->|Result| API
+    API -->|Display| UI
 
-    %% RAG Pipeline
-    RAG -->|Keyword| BM25
-    RAG -->|Vector| VSEARCH
-    BM25 --> CHROMA
-    VSEARCH --> CHROMA
-    IRDAI -.-> CHROMA
-
-    %% Safety Integration
-    POLICY -->|Pre-Check| GUARD
-    POLICY -->|Post-Check| EVAL
-    EVAL -->|Low Confidence| HITL
+    POLICY -->|Validate| GUARD
+    POLICY -->|Evaluate| EVAL
+    EVAL -->|Review| HITL
+    HITL -->|Verified| API
     
-    %% Aux Services
-    POLICY -.->|Translate| TRANS
-    POLICY -.->|Speak| TTS
-```    HITL -->|Expert Verified| API
-
-    %% User Interactions
-    UI -->|Ask Questions| API
-    API -->|Q&A via RAG| RAG
-
-    %% Output Enhancement
-    API -->|Generate Audio| TTS
-    API -->|Translate Text| TRANS
-    TTS -->|Audio File| UI
-    TRANS -->|Hindi Output| UI
-
-    %% Styling with High Contrast
-    classDef frontendStyle fill:#0d47a1,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef apiStyle fill:#4a148c,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef coreStyle fill:#e65100,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef storageStyle fill:#1b5e20,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef searchStyle fill:#006064,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef safetyStyle fill:#b71c1c,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef auxStyle fill:#880e4f,stroke:#ffffff,stroke-width:3px,color:#ffffff
-    classDef subgraphStyle fill:#f5f5f5,stroke:#424242,stroke-width:2px
-
-    class UI frontendStyle
-    class API apiStyle
-    class DOC,RAG,LLM coreStyle
-    class EMBED,CHROMA,IRDAI storageStyle
-    class BM25,VSEARCH searchStyle
-    class GUARD,EVAL,HITL safetyStyle
-    class TTS,TRANS auxStyle
-    class FE,API_LAYER,CORE,STORAGE,SEARCH,SAFETY,AUX subgraphStyle
+    API -->|Audio| TTS
+    API -->|Translate| TRANS
+    TTS -->|Audio| UI
+    TRANS -->|Hindi| UI
 ```
 
 ---
