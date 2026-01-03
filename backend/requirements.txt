@@ -1,0 +1,128 @@
+# SaralPolicy - Local AI Insurance Analysis
+# Complete local processing with Ollama (model configurable via OLLAMA_MODEL env)
+
+# ============================================================================
+# CORE - FastAPI Web Framework (UPGRADED)
+# ============================================================================
+fastapi==0.115.6
+uvicorn==0.34.0
+pydantic==2.10.3
+pydantic-settings==2.12.0
+python-multipart==0.0.20
+jinja2==3.1.6
+
+# ============================================================================
+# DOCUMENT PROCESSING
+# ============================================================================
+PyPDF2==3.0.1
+python-docx==1.1.0
+Pillow==11.3.0
+
+# ============================================================================
+# OLLAMA API - Local LLM (No HuggingFace/Torch)
+# ============================================================================
+requests==2.32.5
+
+# ============================================================================
+# RAG SYSTEM - Retrieval Augmented Generation (UPGRADED)
+# ============================================================================
+chromadb==0.5.23
+rank-bm25==0.2.2
+
+# ============================================================================
+# EVALUATION & GUARDRAILS - AI Safety (LOCAL-FIRST)
+# ============================================================================
+# Core guardrails (local) - v0.5+ supports Pydantic v2
+guardrails-ai==0.5.15
+
+# RAGAS for RAG evaluation (works with Ollama, no API key)
+ragas>=0.1.0
+datasets>=2.14.0
+langchain-community>=0.0.10
+langchain-ollama>=1.0.0
+
+# ============================================================================
+# DATABASE - Local SQLite
+# ============================================================================
+sqlalchemy==2.0.36
+alembic==1.16.5
+
+# ============================================================================
+# SECURITY & ENCRYPTION - PII Protection (CRITICAL UPGRADE)
+# ============================================================================
+cryptography==43.0.3
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+
+# ============================================================================
+# HTTP & ASYNC
+# ============================================================================
+httpx==0.28.1
+aiofiles==23.2.1
+
+# ============================================================================
+# LOGGING - Structured Logs
+# ============================================================================
+structlog==23.2.0
+
+# ============================================================================
+# TESTING
+# ============================================================================
+pytest==8.4.2
+pytest-asyncio==0.21.1
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+python-dotenv==1.0.0
+click==8.1.7
+colorama==0.4.6
+regex==2023.12.25
+
+# ============================================================================
+# OBSERVABILITY - OpenTelemetry (LOCAL-FIRST)
+# ============================================================================
+# OPTIONAL: OpenTelemetry for metrics and tracing (console export, no cloud)
+# Install with: pip install opentelemetry-api opentelemetry-sdk
+# opentelemetry-api>=1.20.0
+# opentelemetry-sdk>=1.20.0
+
+# ============================================================================
+# TASK QUEUE - Background Processing (LOCAL-FIRST)
+# ============================================================================
+# Huey for task queue (SQLite backend, no Redis)
+huey>=2.5.0
+
+# ============================================================================
+# TEXT-TO-SPEECH - Accessibility (Basic)
+# ============================================================================
+pyttsx3==2.99
+gTTS==2.5.4
+pygame==2.6.1
+
+# ============================================================================
+# TEXT-TO-SPEECH - Enhanced Hindi (OPTIONAL)
+# ============================================================================
+# AI4Bharat Indic Parler-TTS for high-quality Hindi speech synthesis
+# Install with: pip install torch transformers soundfile pydub
+# Then: pip install git+https://github.com/huggingface/parler-tts.git
+# Requires ~2GB disk for model cache, ~4GB RAM during inference
+# System dependency: ffmpeg (for MP3 encoding, optional - WAV fallback available)
+#
+# torch>=2.0.0  # CPU-only: pip install torch --index-url https://download.pytorch.org/whl/cpu
+# transformers>=4.35.0
+# soundfile>=0.12.0
+# pydub>=0.25.0
+# parler-tts @ git+https://github.com/huggingface/parler-tts.git
+
+# ============================================================================
+# TRANSLATION - Hindi Support
+# ============================================================================
+argostranslate==1.9.1
+
+# ============================================================================
+# ML UTILITIES - For Evaluation Frameworks
+# ============================================================================
+numpy==1.26.4
+pandas==2.3.3
+scikit-learn==1.7.2

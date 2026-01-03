@@ -1,0 +1,204 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ChromaDB
+backend/data/chroma/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# OS specific
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/.env.local
+
+# HuggingFace secrets (NEVER commit)
+**/HF_TOKEN
+**/.hf_token
+**/huggingface_token*
+
+# Kiro IDE configuration (local development only)
+.kiro/
+
+# Data files (but keep sample data)
+backend/data/chroma/
+backend/data/*.db
+backend/data/*.sqlite
+
+# Keep IRDAI knowledge base
+!backend/data/irdai_knowledge/
+
+# Model files (large)
+*.pt
+*.pth
+*.onnx
+*.bin
+
+# Testing
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation builds
+docs/_build/
+site/
+
+# PyCharm
+.idea/
+
+# Backup files
+*~
+*.bak
+*.orig
+
+# npm (if any frontend build tools)
+node_modules/
+package-lock.json
+
+# Cache
+.cache/
+*.cache
+
+# Windows specific
+$RECYCLE.BIN/
+*.lnk
+
+# macOS specific
+.AppleDouble
+.LSOverride
+._*
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# Pycharm
+.idea

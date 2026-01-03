@@ -1,0 +1,42 @@
+IRDAI Master Circular on Protection of Policyholders' Interests, 2024 (Dated September 05, 2024)
+
+Key Reforms and Mandates for Policyholder Protection:
+
+1. Free Look Period:
+   - The free look period for reviewing policy terms and conditions is extended to 30 days.
+   - This applies to all Life and Health insurance policies with a term of one year or more.
+   - If the policyholder disagrees with the terms, they can return the policy within this period for a refund (subject to deduction of proportionate risk premium).
+
+2. Claim Settlement Timelines & Penalties:
+   - Death Claims (No Investigation): Must be settled within 15 days of receiving all documents.
+   - Death Claims (Investigation Required): Must be settled within 45 days.
+   - General/Health Claims: Must be settled within specified timelines (generally 30 days).
+   - Penalties: If an insurer delays settlement beyond these timelines, they are liable to pay interest at the Bank Rate + 2% from the date of claim intimation/submission.
+
+3. Cashless Authorization (Health Insurance):
+   - Insurers must grant final authorization for discharge within 3 hours receiving the request from the hospital.
+   - Any delay beyond 3 hours resulting in additional hospital charges must be borne by the insurer, not the policyholder.
+   - In case of policyholder's death during treatment, insurers must process the claim immediately to release mortal remains.
+
+4. Customer Information Sheet (CIS):
+   - A standardized Customer Information Sheet (CIS) is mandatory for Life, General, and Health insurance.
+   - It effectively summarizes policy features, benefits, exclusions, and claim procedures.
+   - Must be made available in regional languages upon request.
+
+5. Electronic Policy Issuance:
+   - All policies shall be issued in electronic form (e-Insurance Account/DigiLocker) by default.
+   - Physical policy documents will be provided only on specific request by the policyholder.
+
+6. No Hidden Exclusions:
+   - Insurers must explicitly state all exclusions.
+   - Claims cannot be rejected based on "unstated exclusions" or ambiguous terms.
+   - Font size for policy documents must be minimum size 11 for readability.
+
+7. Ombudsman:
+   - Details of the Insurance Ombudsman must be prominently provided in the policy document for grievance redressal.
+
+8. Distribution Channels:
+   - Insurers must provide a verification tool on their website for customers to verify authorized agents and intermediaries.
+
+Source: IRDAI Master Circular 2024 (Consolidating 30 previous circulars).
+Status: In Effect.
